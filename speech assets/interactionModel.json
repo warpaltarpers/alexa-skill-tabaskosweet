@@ -1,0 +1,41 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "tabasko sweet",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "TabaskoResponse",
+                    "slots": [],
+                    "samples": [
+                        "how does this look",
+                        "what do you think",
+                        "how do I look",
+                        "does it look like i can finesse the plug",
+                        "am I looking fuegissimo my guy",
+                        "what do you think family",
+                        "can I flex on the gram",
+                        "what are my clout levels looking like",
+                        "am I looking fuego"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
