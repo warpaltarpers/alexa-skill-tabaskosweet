@@ -24,7 +24,8 @@ const handlers = {
     this.emit(':ask', speechOutput, reprompt);
   },
   'AMAZON.CancelIntent': function () {
-    this.emit(':tell', this.t('STOP_MESSAGE'));
+    var audioFile = '<audio src="https://s3.amazonaws.com/media.cloutclinic.fuego/here+for+you.mp3" />'
+    this.emit(':tell', `${audioFile}`);
   },
   'AMAZON.StopIntent': function () {
     this.emit(':tell', this.t('STOP_MESSAGE'));
