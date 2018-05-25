@@ -16,7 +16,8 @@ const handlers = {
     this.emit(':ask', `${audioFile}`, "Go ahead and ask Dr. Sweet something, my guy.");
   },
   'TabaskoResponse':function(){
-    // Play random Tabasko response
+    var audioFile = Results.getResults();
+    this.emit(':tell', `${audioFile}`);
   },
   'AMAZON.HelpIntent': function () {
     const speechOutput = this.t('HELP_MESSAGE');
