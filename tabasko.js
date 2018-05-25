@@ -1,11 +1,12 @@
 'use strict';
 
 const Alexa = require('alexa-sdk');
+const Results = require('results');
 
 const handlers = {
   // No intent launch
   'LaunchRequest':function(){
-    // Play Tabasko welcome here
+    var audioFile = '<audio src="https://s3.amazonaws.com/tabaskosweetresponses/tabasko+welcome.mp3">';
     this.emit(':responseReady');
   },
   'TabaskoResponse':function(){
