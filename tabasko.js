@@ -13,7 +13,8 @@ const handlers = {
   // No intent launch
   'LaunchRequest':function(){
     var audioFile = '<audio src="https://s3.amazonaws.com/media.cloutclinic.fuego/tabasko+welcome.mp3" />';
-    this.emit(':ask', `${audioFile}`, "Go ahead and ask Dr. Sweet something, my guy.");
+    var rxGang = '<audio src="https://s3.amazonaws.com/media.cloutclinic.fuego/rx+gang.mp3" />';
+    this.emit(':ask', `${audioFile}`, `${rxGang}`);
   },
   'TabaskoResponse':function(){
     var audioFile = Results.getResults();
