@@ -3,11 +3,17 @@
 const Alexa = require('alexa-sdk');
 const Results = require('results');
 
+exports.handler = function (event, context, callback) {
+  const alexa = Alexa.handler(event, context);
+  alexa.registerHandlers(handlers);
+  alexa.execute();
+};
+
 const handlers = {
   // No intent launch
   'LaunchRequest':function(){
-    var audioFile = '<audio src="https://s3.amazonaws.com/tabaskosweetresponses/tabasko+welcome.mp3">';
-    this.emit(':responseReady');
+    var audioFile = '<audio src="https://s3.amazonaws.com/media.cloutclinic.fuego/tabasko+welcome.mp3" />';
+    this.emit(':ask', `${audioFile}`, "Go ahead and ask Dr. Sweet something, my guy.");
   },
   'TabaskoResponse':function(){
     // Play random Tabasko response
@@ -23,10 +29,4 @@ const handlers = {
   'AMAZON.StopIntent': function () {
     this.emit(':tell', this.t('STOP_MESSAGE'));
   },
-};
-
-exports.handler = function (event, context) {
-  const alexa = Alexa.handler(event, context);
-  alexa.registerHandlers(handlers);
-  alexa.execute();
 };
